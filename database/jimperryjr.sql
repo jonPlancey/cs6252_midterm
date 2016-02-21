@@ -22,14 +22,14 @@ CREATE TABLE member (
 	member_name			varchar(255)	not null,
 	member_birthday		date			not null,
 
-	unique index id (team_id),
-	foreign key (team_id) references artist(team_id),
+	unique index team_id (team_id),	
+	foreign key (team_id) references team(team_id),		
 	primary key (member_id)	
 );
 
 
 /*create users*/
-create user if not exists artist@192.185.39.71 identified by 'music2015'; 
+create user if not exists artist@localhost identified by 'music2015'; 
 
 grant select, insert, update 
 on *.*
