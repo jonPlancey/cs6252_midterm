@@ -6,8 +6,7 @@ USE
   jim_team_member;
 
  
- 
-/*create tables*/
+ /*create tables*/
 CREATE TABLE team (
 	team_id				int				auto_increment,
 	team_name			varchar(255)	not null 		unique,
@@ -15,7 +14,6 @@ CREATE TABLE team (
 	
 	primary key (team_id)
 );
-
 
 /*create tables*/
 CREATE TABLE member (
@@ -26,9 +24,8 @@ CREATE TABLE member (
 
 	unique index id (team_id),
 	foreign key (team_id) references artist(team_id),
-	primary key (member_id),	
+	primary key (member_id)	
 );
-
 
 
 /*create users*/
