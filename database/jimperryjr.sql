@@ -10,7 +10,7 @@ USE
 /*create tables*/
 CREATE TABLE team (
 	team_id				int				auto_increment,
-	team_name			varchar(255)	not null 	unique,
+	team_name			varchar(255)	not null 		unique,
 	team_description	varchar(500)	not null,	
 	
 	primary key (team_id)
@@ -23,11 +23,10 @@ CREATE TABLE member (
 	member_id			int				auto_increment,	
 	member_name			varchar(255)	not null,
 	member_birthday		date			not null,
-	
+
+	unique index id (team_id),
 	foreign key (team_id) references artist(team_id),
-	primary key (member_id),
-	
-	unique index id_artist (id_artist),	
+	primary key (member_id),	
 );
 
 
