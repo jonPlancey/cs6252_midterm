@@ -32,3 +32,15 @@ create user if not exists jim_member@localhost identified by 'midterm2015';
 grant select, insert, update 
 on *.*
 to 'jim_member'@'localhost' require none;
+
+
+
+/*update table: team*/
+CREATE TABLE team (
+
+}
+
+/*update table: member*/
+CREATE TABLE member (
+
+}
