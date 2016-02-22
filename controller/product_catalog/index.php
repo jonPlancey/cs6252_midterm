@@ -12,6 +12,7 @@ if ($action == NULL) {
 }  
 
 if ($action == 'list_products') {
+	
     $category_id = filter_input(INPUT_GET, 'category_id', 
             FILTER_VALIDATE_INT);
     if ($category_id == NULL || $category_id == FALSE) {
@@ -24,11 +25,12 @@ if ($action == 'list_products') {
 	
 	
 } else if ($action == 'view_product') {
+	
     $product_id = filter_input(INPUT_GET, 'product_id', 
             FILTER_VALIDATE_INT);   
     if ($product_id == NULL || $product_id == FALSE) {
         $error = 'Missing or incorrect product id.';
-        include('../errors/error.php');
+        include('../../public/errors/error.php');
     } else {
         $categories = get_categories();
         $product = get_product($product_id);
@@ -48,10 +50,10 @@ if ($action == 'list_products') {
         $unit_price_f = number_format($unit_price, 2);
 
         // Get image URL and alternate text
-        $image_filename = '../images/' . $code . '.png';
+        $image_filename = '../../public/images/' . $code . '.png';
         $image_alt = 'Image: ' . $code . '.png';
 
-        include('product_view.php');
+        include('../../view/product_catalog/product_view.php');
     }
 }
 ?>
