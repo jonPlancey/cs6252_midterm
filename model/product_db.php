@@ -49,13 +49,26 @@ function add_product($category_id, $code, $name, $price) {
     $statement->closeCursor();
 }
 
-function edit_product($category_id, $code, $name, $price) {
+/* DEBUG */
+function edit_product($product_id, $category_id, $code, $name, $price) {
+	
+	//echo '<script type="text/javascript">alert("DEBUG: edit_product");</script>';			
+	
+	echo '<script type="text/javascript">alert("edit_product [ ' .$product_id. ' ' .$category_id.'  '.$code.'  '.$name.'  '.$price.  ' ]");</script>';
+
 	global $db;
-	$query = 'UPDATE products
-                 (categoryID, productCode, productName, listPrice)
-              VALUES
-                 (:category_id, :code, :name, :price)';
+	$query = '	UPDATE
+					products 
+				SET 
+					categoryID	=	:category_id, 
+					productCode	=	:code, 			
+					productName	=	:name, 
+					listPrice	=	:price 
+				WHERE 
+					productID = :product_id';
+					
 	$statement = $db->prepare($query);
+	$statement->bindValue(':product_id', $product_id);	
 	$statement->bindValue(':category_id', $category_id);
 	$statement->bindValue(':code', $code);
 	$statement->bindValue(':name', $name);

@@ -1,8 +1,8 @@
 <?php include '../../view/template/header.php'; ?>
 <main>
     <h1>Edit Product</h1>
-    <form action="index.php" method="post" id="add_product_form">
-        <input type="hidden" name="action" value="add_product">
+    <form action="../../controller/product_manager/index.php" method="post" id="add_product_form">
+        <input type="hidden" name="action" value="edit_product">
 
         <label>Category:</label>
         
@@ -36,8 +36,9 @@
         <input type="submit" value="Update Product" />
         <br>
     </form>
+
     <p class="last_paragraph">
-        <a href="../../controller/product_manager/index.php?action=list_products">View Product List</a
+        <a href="../../controller/product_manager/index.php?action=list_products">View Product List</a>
     </p>
 	
 

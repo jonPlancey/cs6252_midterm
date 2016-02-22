@@ -1,7 +1,7 @@
 <?php include '../../view/template/header.php'; ?>
 <main>
     <aside>
-        <h1>Categories</h1>
+        <h1>Teams</h1>
 		
 		<!-- display links for all categories -->
 		<?php include '../../view/template/categories_nav.php'; ?>

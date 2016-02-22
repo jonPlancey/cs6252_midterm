@@ -3,7 +3,7 @@
 
 
     <aside>
-        <h1>Categories</h1>
+        <h1>Teams</h1>
         <?php include '../../view/template/categories_nav.php'; ?> 
         
     </aside>

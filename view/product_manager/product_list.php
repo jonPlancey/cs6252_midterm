@@ -8,7 +8,7 @@
 
     <aside>
         <!-- display a list of categories -->
-        <h2>Categories</h2>
+        <h2>Teams</h2>
         
         <?php include '../../view/template/categories_nav.php'; ?>
 
@@ -23,6 +23,7 @@
                 <th>Name</th>
                 <th class="right">Price</th>
                 <th>&nbsp;</th>
+                <th>&nbsp;</th>				
             </tr>
             <?php foreach ($products as $product) : ?>
             <tr>
@@ -47,18 +48,19 @@
                 </form></td>
                 
                 <td>
-                <form action="." method="post">
-                    <input type="hidden" name="action"
-                           value="edit_product">
-                           
-                    <input type="hidden" name="product_id"
-                           value="<?php echo $product['productID']; ?>">
-                           
-                    <input type="hidden" name="category_id"
-                           value="<?php echo $product['categoryID']; ?>">                           
-                           
-                    <input type="submit" value="Edit">
-                </form></td>
+					<form action="." method="post">
+						<input type="hidden" name="action"
+							   value="update_product">
+							   
+						<input type="hidden" name="product_id"
+							   value="<?php echo $product['productID']; ?>">
+							   
+						<input type="hidden" name="category_id"
+							   value="<?php echo $product['categoryID']; ?>">                           
+							   
+						<input type="submit" value="Edit">
+					</form>
+				</td>
                     
                        
             </tr>
