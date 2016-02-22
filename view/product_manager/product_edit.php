@@ -37,8 +37,9 @@
         <br>
     </form>
     <p class="last_paragraph">
-        <a href="../../controller/product_manager/index.php?action=edit_product">View Product List</a>
+        <a href="../../controller/product_manager/index.php?action=list_products">View Product List</a
     </p>
+	
 
 </main>
 <?php include '../../view/template/footer.php'; ?>
