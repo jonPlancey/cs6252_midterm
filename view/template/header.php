@@ -2,7 +2,7 @@
 	
 	function locateMainCssFile() {
 		$path = '';
-		$dir = ['/view/', '//../view/'];
+		$dir = ['/public/css/', '/../../public/css/'];
 		
 		if (file_exists(dirname($dir[0]))) {
 			$path = $dir[0];
