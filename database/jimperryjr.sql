@@ -36,27 +36,31 @@ to 'jim_member'@'localhost' require none;
 
 
 /*update table: team*/
-insert into team (team_name, team_description) values
+insert into team 
+	(team_name, team_description) 
+values
 	('Sneaky Miners', 		'PHP coders'),
 	('Fighting Heroes',		'C++ developers'),
 	('Reptile Crunchers', 	'the best in R programming'),
-	('Knockout Bandits', 	'C# deve heads')
+	('Knockout Bandits', 	'C# deve heads'),
 	
 	('Alpha Soldiers', 		'javaScript junkies for the web'),
 	('Delta Predators',		'People who love Objective-C'),
 	('American Geckos', 	'Visual Basic velocity in motion'),
-	('Spinning Gangstaz', 	'Promising pythong people')	
-	
+	('Spinning Gangstaz', 	'Promising pythong people');	
 
 
 /*update table: member*/
-CREATE TABLE member (member_name, member_birthday) values
-	('jim', 	2003-12-31)
-	('bob', 	2003-12-31)
-	('sally',	2003-12-31)
-	('sue', 	2003-12-31)
-	('frank', 	2003-12-31)
-	('justin', 	2003-12-31)
-	('petter', 	2003-12-31)
-	('paul', 	2003-12-31)
-}
+insert into member 
+	(member_name, member_birthday, team_id) 
+values
+	('jim', 	2003-12-31, 1),
+	('bob', 	2003-12-31, 2),
+	('sally',	2003-12-31, 3),
+	('sue', 	2003-12-31, 4),
+	('frank', 	2003-12-31, 5),
+	('justin', 	2003-12-31, 6),
+	('petter', 	2003-12-31, 7),
+	('paul', 	2003-12-31, 8);
+
+
