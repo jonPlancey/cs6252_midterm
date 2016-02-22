@@ -111,10 +111,10 @@
 
 	function edit_categories(){
 
-
+		echo 'DEBUG_need to go back--->';
 		
 		$categories = get_categories();
-		include('product_edit.php');
+		include('../../view/product_manager/product_edit.php');
 	}
 
 
