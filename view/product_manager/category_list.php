@@ -23,7 +23,7 @@
 			</tr>
 					
 			<?php endforeach; ?>  						 
-	        <!-- Newly added tabe -->        
+	        <!-- Newly added table -->        
 	    
 	    </table>
 	

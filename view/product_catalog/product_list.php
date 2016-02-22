@@ -2,19 +2,12 @@
 <main>
     <aside>
         <h1>Categories</h1>
-        <nav>
-        <ul>
-            <!-- display links for all categories -->
-            <?php foreach($categories as $category) : ?>
-            <li>
-                <a href="?category_id=<?php echo $category['categoryID']; ?>">
-                    <?php echo $category['categoryName']; ?>
-                </a>
-            </li>
-            <?php endforeach; ?>
-        </ul>
-        </nav>
+		
+		<!-- display links for all categories -->
+		<?php include '../../view/template/categories_nav.php'; ?>
+		
     </aside>
+	
     <section>
         <h1><?php echo $category_name; ?></h1>
         <ul class="nav">

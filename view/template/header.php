@@ -12,7 +12,6 @@
 		echo $path. 'main.css';
 	}
 
-
 ?> 
 
 
