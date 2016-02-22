@@ -6,7 +6,7 @@ USE
   jim_team_member;
 
  
- /*create tables*/
+/*create tables*/
 CREATE TABLE team (
 	team_id				int				auto_increment,
 	team_name			varchar(255)	not null 		unique,
@@ -27,12 +27,8 @@ CREATE TABLE member (
 	primary key (member_id)	
 );
 
-
 /*create users*/
-create user if not exists artist@localhost identified by 'music2015'; 
-
+create user if not exists jim_member@localhost identified by 'midterm2015'; 
 grant select, insert, update 
 on *.*
-to 'artist'@'localhost' require none;
-
- 
+to 'jim_member'@'localhost' require none;
