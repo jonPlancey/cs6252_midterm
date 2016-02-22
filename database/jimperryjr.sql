@@ -50,7 +50,13 @@ insert into team (team_name, team_description) values
 
 
 /*update table: member*/
-CREATE TABLE member (
-
-
+CREATE TABLE member (member_name, member_birthday) values
+	('jim', 	2003-12-31)
+	('bob', 	2003-12-31)
+	('sally',	2003-12-31)
+	('sue', 	2003-12-31)
+	('frank', 	2003-12-31)
+	('justin', 	2003-12-31)
+	('petter', 	2003-12-31)
+	('paul', 	2003-12-31)
 }
