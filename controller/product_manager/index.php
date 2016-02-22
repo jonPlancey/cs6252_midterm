@@ -50,7 +50,7 @@
 		
 		
 	    $categories = get_categories();
-	    include('product_add.php');    
+	    include('../../view/product_manager/product_add.php');    
 	    
 	    
 	} else if ($action == 'add_product') {
@@ -88,7 +88,7 @@
 	
 	function list_categories(){
 		$categories = get_categories();
-		include('category_list.php');
+		include('../../view/product_manager/category_list.php');
 	}
 
 	function add_categories(){
