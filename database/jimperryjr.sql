@@ -36,11 +36,21 @@ to 'jim_member'@'localhost' require none;
 
 
 /*update table: team*/
-CREATE TABLE team (
+insert into team (team_name, team_description) values
+	('Sneaky Miners', 		'PHP coders'),
+	('Fighting Heroes',		'C++ developers'),
+	('Reptile Crunchers', 	'the best in R programming'),
+	('Knockout Bandits', 	'C# deve heads')
+	
+	('Alpha Soldiers', 		'javaScript junkies for the web'),
+	('Delta Predators',		'People who love Objective-C'),
+	('American Geckos', 	'Visual Basic velocity in motion'),
+	('Spinning Gangstaz', 	'Promising pythong people')	
+	
 
-}
 
 /*update table: member*/
 CREATE TABLE member (
+
 
 }
