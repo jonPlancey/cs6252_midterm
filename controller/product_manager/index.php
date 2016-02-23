@@ -139,22 +139,15 @@
 	    $name			= filter_input(INPUT_POST, 'name');
 	    $price 			= filter_input(INPUT_POST, 'price');
 	
-		
-		 echo '<script type="text/javascript">alert("edit_products [ ' .$category_id.'  '.$code.'  '.$name.'  '.$price.  ' ]");</script>';		
-
-	    if ($category_id == NULL || $category_id == FALSE || $code == NULL || 
-	            $name == NULL || $price == NULL || $price == FALSE) {
+	    if ($category_id == NULL || $category_id == FALSE || $code == NULL || $name == NULL || $price == NULL || $price == FALSE) {
 	        $error = "Invalid product data. Check all fields and try again.";
 	        include('../../public/errors/error.php');
 	    } else { 
 			//$categories = get_categories();
 			//$product = get_product($product_id);
 			
-			// echo 'ABC';
-			
-			
-	        update_member($product_id, $category_id, $code, $name, $price);		
-	       // header("Location: .?category_id=$category_id");
+	        //update_member($product_id, $category_id, $code, $name, $price);		
+			header("Location: .?category_id=$category_id");
 	    }
 		
 

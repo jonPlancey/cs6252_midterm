@@ -11,3 +11,10 @@
         exit();
     }
 ?>
+<?php // DATABASE CONNECTION CALL
+$connection = mysqli_connect ( 'localhost', 'mgs_user', 'pa55word', 'my_guitar_shop1' );
+if (! $connection) {
+	die ( '<div class="alert alert-danger" role="alert">
+		<b>The database did not connect: ' . mysqli_error ($connection) ) . '</b></div>';
+}
+?>

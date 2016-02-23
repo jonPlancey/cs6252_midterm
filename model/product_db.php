@@ -52,6 +52,19 @@ function add_product($category_id, $code, $name, $price) {
 
 /* DEBUG */
 function update_member($product_id, $category_id, $code, $name, $price) {
+   	 echo '<script type="text/javascript">alert("edit_products [ ' .$category_id.'  '.$code.'  '.$name.'  '.$price.  ' ]");</script>';		
+/* 	global $connection;
+	
+	$q = "UPDATE `my_guitar_shop1`.`products` SET `productCode`='{$code}', `categoryID`='{$categoryID}', `productName`='{$name}', `listPrice`='{$price}' WHERE `productID`='$product_id'";
+	$r = mysqli_query ( $connection, $q );
+	if (! $r) {
+		echo '<b>Opps. The product (PID) you have requested can not be found. </b>' . mysqli_error ( $connection );
+	} else {
+		$row = mysqli_fetch_array ( $r, MYSQLI_ASSOC );
+		return $row; // only returns one value
+		echo $q;
+	} */
+	
 	global $db;
 	$query = '	UPDATE
 					products 
