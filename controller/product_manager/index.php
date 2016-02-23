@@ -14,7 +14,6 @@
 	        $action = 'list_products';
 	    }
 	}
-		echo $action ;
 	
 	if ($action == 'list_products') {
 		
@@ -70,8 +69,8 @@
 	        header("Location: .?team_id=$team_id");
 	    }
     
-	} else if ($action == 'list_categories') {
-    	list_categories();
+	} else if ($action == 'list_groups') {
+    	list_groups();
 		
 	} else if ($action == 'add_categories') {		
 		add_categories();		
@@ -88,7 +87,7 @@
 	}	
 	
 	
-	function list_categories(){
+	function list_groups(){
 		$teams = get_teams();
 		include('../../view/product_manager/category_list.php');
 	}
@@ -101,14 +100,14 @@
 			include('../../public/errors/error.php');
 		} else {							
 			add_category($category);
-			header('Location: .?action=list_categories');		
+			header('Location: .?action=list_groups');		
 		}
 	}
 	
 	function delete_categories(){
 		$team_id = filter_input(INPUT_POST, 'team_id', FILTER_VALIDATE_INT);
 		delete_category($team_id);
-		header('Location: .?action=list_categories');
+		header('Location: .?action=list_groups');
 	}
 
 	

@@ -20,7 +20,7 @@
 		
 		<p>
 			<a href="?action=show_add_form">Add Member</a>&nbsp;&nbsp;
-			<a href="?action=list_categories">List Groups</a>
+			<a href="?action=list_groups">List Groups</a>
 		</p>
 
 
