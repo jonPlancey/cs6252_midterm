@@ -1,15 +1,15 @@
 <?php
 function get_member_by_team($team_id) {
     global $db;
-    $query = 'SELECT * FROM team
-              WHERE products.categoryID = :team_id
+    $query = 'SELECT * FROM member
+              WHERE member.team_id = :team_id
               ORDER BY member_id';
     $statement = $db->prepare($query);
     $statement->bindValue(":team_id", $team_id);
     $statement->execute();
-    $products = $statement->fetchAll();
+    $members = $statement->fetchAll();
     $statement->closeCursor();
-    return $products;
+    return $members;
 }
 
 function get_product($product_id) {
@@ -35,14 +35,14 @@ function delete_product($product_id) {
     $statement->closeCursor();
 }
 
-function add_product($category_id, $code, $name, $price) {
+function add_product($team_id, $code, $name, $price) {
     global $db;
     $query = 'INSERT INTO products
                  (categoryID, productCode, productName, listPrice)
               VALUES
-                 (:category_id, :code, :name, :price)';
+                 (:team_id, :code, :name, :price)';
     $statement = $db->prepare($query);
-    $statement->bindValue(':category_id', $category_id);
+    $statement->bindValue(':team_id', $team_id);
     $statement->bindValue(':code', $code);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':price', $price);
@@ -51,14 +51,14 @@ function add_product($category_id, $code, $name, $price) {
 }
 
 /* DEBUG */
-function update_member($product_id, $category_id, $code, $name, $price) {
-   	//echo '<script type="text/javascript">alert("edit_products [ ' .$product_id. '    ' .$category_id.'   '.$code.'   '.$name.'   '.$price.  ' ]");</script>';		
+function update_member($product_id, $team_id, $code, $name, $price) {
+   	//echo '<script type="text/javascript">alert("edit_products [ ' .$product_id. '    ' .$team_id.'   '.$code.'   '.$name.'   '.$price.  ' ]");</script>';		
 	global $db;
 	
 	$query = 'UPDATE
 					products 
 				SET 
-					categoryID	=	:category_id, 
+					categoryID	=	:team_id, 
 					productCode	=	:code, 			
 					productName	=	:name, 
 					listPrice	=	:price 
@@ -67,7 +67,7 @@ function update_member($product_id, $category_id, $code, $name, $price) {
 					
 	$statement = $db->prepare($query);
 	$statement->bindValue(':product_id',	$product_id);	
-	$statement->bindValue(':category_id',	$category_id);
+	$statement->bindValue(':team_id',	$team_id);
 	$statement->bindValue(':code', 			$code);
 	$statement->bindValue(':name', 			$name);
 	$statement->bindValue(':price',			$price);

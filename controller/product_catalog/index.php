@@ -13,14 +13,14 @@ if ($action == NULL) {
 
 if ($action == 'list_products') {
 	
-    $category_id = filter_input(INPUT_GET, 'category_id', FILTER_VALIDATE_INT);
+    $team_id = filter_input(INPUT_GET, 'team_id', FILTER_VALIDATE_INT);
 	
-    if ($category_id == NULL || $category_id == FALSE) {
-        $category_id = 1;
+    if ($team_id == NULL || $team_id == FALSE) {
+        $team_id = 1;
     }
     $teams = get_teams();
-    $team_name = get_team_name($category_id);
-    $member = get_member_by_team($category_id);
+    $team_name = get_team_name($team_id);
+    $member = get_member_by_team($team_id);
     include('../../view/product_catalog/product_list.php');
 	
 	

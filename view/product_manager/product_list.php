@@ -40,7 +40,7 @@
 						<input type="hidden" name="product_id"
 							   value="<?php echo $product['productID']; ?>">
 							   
-						<input type="hidden" name="category_id"
+						<input type="hidden" name="team_id"
 							   value="<?php echo $product['categoryID']; ?>">
 							   
 						<input type="submit" value="Delete">         
@@ -55,7 +55,7 @@
 						<input type="hidden" name="product_id"
 							   value="<?php echo $product['productID']; ?>">
 							   
-						<input type="hidden" name="category_id"
+						<input type="hidden" name="team_id"
 							   value="<?php echo $product['categoryID']; ?>">                           
 							   
 						<input type="submit" value="Edit">

@@ -22,7 +22,7 @@ CREATE TABLE member (
 	member_name			varchar(255)	not null,
 	member_birthday		date,
 
-	unique index team_id (team_id),	
+	index team_id (team_id),	
 	foreign key (team_id) references team(team_id),		
 	primary key (member_id)	
 );
@@ -55,10 +55,19 @@ insert into member
 	(member_name, member_birthday, team_id) 
 values
 	('jim', 	'1977-01-25', 1),
-	('bob', 	'1978-01-24', 2),
-	('sally',	'1979-02-23', 3),
-	('sue', 	'1980-02-22', 4),
-	('frank', 	'1981-03-21', 5),
-	('justin', 	'1982-03-20', 6),
-	('petter', 	'1983-04-19', 7),
+	('bob', 	'1978-01-24', 1),
+	('sally',	'1979-02-23', 1),
+	('sue', 	'1980-02-22', 2),
+	('frank', 	'1981-03-21', 2),
+	('justin', 	'1982-03-20', 5),
+	('petter', 	'1983-04-19', 5),
 	('paul', 	'1984-04-18', 8);
+	
+	('harold', 	'1977-01-25', 3),
+	('robin', 	'1978-01-24', 3),
+	('sally',	'1979-02-23', 4),
+	('sam', 	'1980-02-22', 7),
+	('bucky', 	'1981-03-21', 7),
+	('justin', 	'1982-07-20', 8),
+	('will', 	'1983-09-19', 8),
+	('stacy', 	'1984-10-18', 8);	

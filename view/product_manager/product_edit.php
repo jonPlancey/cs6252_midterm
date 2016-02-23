@@ -1,7 +1,7 @@
 <?php include '../../view/template/header.php'; ?>
 
 <?php
-	$category_id = filter_input(INPUT_POST, 'category_id');
+	$team_id = filter_input(INPUT_POST, 'team_id');
 	$product = get_product($product_id);
 ?>
 
@@ -24,7 +24,7 @@
 
         <label>Category:</label>
         
-        <select id="id_dd_category" name="category_id" onchange="myFunction()">
+        <select id="id_dd_category" name="team_id" onchange="myFunction()">
 			<option selected disabled class="hideoption">View Categories</option>		
 	        <?php foreach ( $categories as $category ) : ?>
 			
@@ -40,7 +40,7 @@
         <br>
 		<!--load values into fields-->
         <label>&nbsp;</label>
-        <input type="text" name="category" value = "<?php echo get_team_name($category_id);?>"  id = "id_category" />
+        <input type="text" name="category" value = "<?php echo get_team_name($team_id);?>"  id = "id_category" />
         <br>
         
 
@@ -59,7 +59,7 @@
         <label>&nbsp;</label>
         <input type="submit" value="Update Product" />
         <input type="hidden" name="product_id" value = "<?php echo $product_id;?>" />
-        <input type="hidden" name="category_id" value = "<?php echo $category_id;?>" />
+        <input type="hidden" name="team_id" value = "<?php echo $team_id;?>" />
 		
 
         <br>

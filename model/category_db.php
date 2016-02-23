@@ -35,25 +35,25 @@
 
 	}
 		
-	function delete_category($category_id) {
+	function delete_category($team_id) {
 		global $db;		
 		$query = 'DELETE FROM categories
-              WHERE categoryID = :category_id';
+              WHERE categoryID = :team_id';
 		 
 		$statement = $db->prepare($query);
-		$statement->bindValue(':category_id', $category_id);
+		$statement->bindValue(':team_id', $team_id);
 		$success = $statement->execute();
 		$statement->closeCursor();	
 
 	}
 	
-	function edit_category($category_id) {
+	function edit_category($team_id) {
 		global $db;
 		$query = 'UPDATE FROM categories
-              WHERE categoryID = :category_id';
+              WHERE categoryID = :team_id';
 			
 		$statement = $db->prepare($query);
-		$statement->bindValue(':category_id', $category_id);
+		$statement->bindValue(':team_id', $team_id);
 		$success = $statement->execute();
 		$statement->closeCursor();
 	

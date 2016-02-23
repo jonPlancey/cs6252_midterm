@@ -5,7 +5,7 @@
         <input type="hidden" name="action" value="add_product">
 
         <label>Category:</label>
-        <select name="category_id">
+        <select name="team_id">
         <?php foreach ( $categories as $category ) : ?>
             <option value="<?php echo $category['categoryID']; ?>">
                 <?php echo $category['categoryName']; ?>
