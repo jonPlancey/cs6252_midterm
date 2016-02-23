@@ -21,6 +21,14 @@ if ($action == 'list_products') {
     $teams = get_teams();
     $team_name = get_team_name($team_id);
     $member = get_member_by_team($team_id);
+	
+	/*
+	$description = get_team_description($team_id);
+	//$info = $description['team_description'];
+	
+	echo var_dump(  $member['member_name']  )
+	*/
+	
     include('../../view/product_catalog/product_list.php');
 	
 	

@@ -8,7 +8,11 @@
 		
     </aside>
 	
+	
+	
+	
     <section>
+		
         <h1><?php echo $team_name; ?></h1>
         <ul class="nav">
 
@@ -22,6 +26,16 @@
             </li>
             <?php endforeach; ?>
         </ul>
+		
+		<div id="right_column">
+		<b>Description:</b> 
+            <p>
+               <?php echo $description; ?>
+            </p>
+        </div>
+		
+		
+		
     </section>
 </main>
 <?php include '../../view/template/footer.php'; ?>

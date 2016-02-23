@@ -11,6 +11,18 @@ function get_member_by_team($team_id) {
     $statement->closeCursor();
     return $members;
 }
+function get_team_description($team_id) {
+    global $db;
+    $query = 'SELECT * FROM team
+              WHERE team.team_id = :team_id
+              ORDER BY team_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(":team_id", $team_id);
+    $statement->execute();
+    $description = $statement->fetchAll();
+    $statement->closeCursor();
+    return $description;
+}
 
 function get_member($member_id) {
     global $db;
