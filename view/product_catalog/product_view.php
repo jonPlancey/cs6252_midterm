@@ -13,7 +13,7 @@
 	
         <h1><?php echo $name; ?></h1>
 
-        <div id="right_column_2">
+        <div id="right_column">
             <p>
 				<b>Birthday:</b> <?php echo $birth_day; ?>
 			</p>

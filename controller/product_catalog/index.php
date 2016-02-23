@@ -21,22 +21,7 @@ if ($action == 'list_products') {
     $teams 		= get_teams();
     $member		= get_member_by_team($team_id);	
     $team_name	= get_team_name($team_id);
-
-	
 	$description = get_team_description($team_id);
-	
-	
-	echo $team_name;
-	
-	
-
-	//$team['team_name'];
-	/*
-	
-	//$info = $description['team_description'];
-	
-	echo var_dump(  $member['member_name']  )
-	*/
 	
     include('../../view/product_catalog/product_list.php');
 	
@@ -61,7 +46,7 @@ if ($action == 'list_products') {
         $image_filename = '../../public/images/' . $code . '.jpg';
         $image_alt = 'Image: ' . $code . '.jpg';
 		
-        include('../../view/product_catalog/product_view.php');
+        include('../../view/product_catalog/member_view.php');
     }
 }
 ?>

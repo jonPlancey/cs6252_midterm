@@ -1,7 +1,5 @@
 
-<?php 
-	include '../../view/template/header.php'; 
-?>
+<?php include '../../view/template/header.php'; ?>
 
 <main>
     <h1>Product List</h1>
@@ -17,20 +15,32 @@
     <section>
         <!-- display a table of products -->
         <h2><?php echo $team_name; ?></h2>
+		
+		
+		
+		<p>
+			<a href="?action=show_add_form">Add Member</a>&nbsp;&nbsp;
+			<a href="?action=list_categories">List Groups</a>
+		</p>
+
+
+		
         <table>
             <tr>
-                <th>Code</th>
+                <th>Group Category</th>
                 <th>Name</th>
-                <th class="right">Price</th>
+                <th class="right">Birthday</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>				
             </tr>
-            <?php foreach ($products as $product) : ?>
+			
+			
+            <?php foreach ($member as $person) : ?>
             <tr>
-                <td><?php echo $product['productCode']; ?></td>
-                <td><?php echo $product['productName']; ?></td>
+                <td><?php echo $person['member_id']; ?></td>
+                <td><?php echo $person['member_name']; ?></td>
                 
-                <td class="right"><?php echo $product['listPrice']; ?></td>
+                <td class="right"><?php echo $person['member_birthday']; ?></td>
                 
                 <td>
 					<form action="." method="post">
@@ -65,9 +75,14 @@
                        
             </tr>
             <?php endforeach; ?>
+
         </table>
-        <p><a href="?action=show_add_form">Add Product</a></p>
-        <p class="last_paragraph"><a href="?action=list_categories">List Categories</a></p>        
+		
+		
+ 
+
+		
     </section>
 </main>
+
 <?php include '../../view/template/footer.php'; ?>
