@@ -3,20 +3,20 @@
     <aside>
         <h1>Teams</h1>
 		
-		<!-- display links for all categories -->
+		<!-- display links for all Teams\groups -->
 		<?php include '../../view/template/categories_nav.php'; ?>
 		
     </aside>
 	
     <section>
-        <h1><?php echo $category_name; ?></h1>
+        <h1><?php echo $team_name; ?></h1>
         <ul class="nav">
-            <!-- display links for products in selected category -->
-            <?php foreach ($products as $product) : ?>
+            <!-- display links for members in selected Teams\groups -->
+            <?php foreach ($member as $person) : ?>
             <li>
-                <a href="?action=view_product&amp;product_id=<?php 
-                          echo $product['productID']; ?>">
-                    <?php echo $product['productName']; ?>
+                <a href = "?action=view_product&amp;product_id=<?php 
+					echo $member['member_id']; ?>" >					  
+                    <?php echo $member['member_name']; ?>
                 </a>
             </li>
             <?php endforeach; ?>

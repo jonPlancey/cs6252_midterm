@@ -16,7 +16,7 @@
 
     <section>
         <!-- display a table of products -->
-        <h2><?php echo $category_name; ?></h2>
+        <h2><?php echo $team_name; ?></h2>
         <table>
             <tr>
                 <th>Code</th>

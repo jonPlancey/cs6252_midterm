@@ -24,8 +24,8 @@
 	    if ($category_id == NULL || $category_id == FALSE) {
 	        $category_id = 1;
 	    }
-	    $category_name = get_category_name($category_id);
-	    $categories = get_categories();
+	    $team_name = get_team_name($category_id);
+	    $teams = get_teams();
 	    $products = get_products_by_category($category_id);
 	    include('../../view/product_manager/product_list.php');
 	    
@@ -48,7 +48,7 @@
 	} else if ($action == 'show_add_form') {
 		
 		
-	    $categories = get_categories();
+	    $teams = get_teams();
 	    include('../../view/product_manager/product_add.php');    
 	    
 	    
@@ -89,7 +89,7 @@
 	
 	
 	function list_categories(){
-		$categories = get_categories();
+		$teams = get_teams();
 		include('../../view/product_manager/category_list.php');
 	}
 
@@ -118,7 +118,7 @@
 	/*navigates to edit team page*/
 	function show_edit_form(){
 		
-		$categories = get_categories();
+		$teams = get_teams();
 		$product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
 		include('../../view/product_manager/product_edit.php');
 	}

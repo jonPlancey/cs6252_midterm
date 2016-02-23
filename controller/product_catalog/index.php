@@ -13,26 +13,26 @@ if ($action == NULL) {
 
 if ($action == 'list_products') {
 	
-    $category_id = filter_input(INPUT_GET, 'category_id', 
-            FILTER_VALIDATE_INT);
+    $category_id = filter_input(INPUT_GET, 'category_id', FILTER_VALIDATE_INT);
+	
     if ($category_id == NULL || $category_id == FALSE) {
         $category_id = 1;
     }
-    $categories = get_categories();
-    $category_name = get_category_name($category_id);
+    $teams = get_teams();
+    $team_name = get_team_name($category_id);
     $products = get_products_by_category($category_id);
     include('../../view/product_catalog/product_list.php');
 	
 	
 } else if ($action == 'view_product') {
 	
-    $product_id = filter_input(INPUT_GET, 'product_id', 
-            FILTER_VALIDATE_INT);   
+    $product_id = filter_input(INPUT_GET, 'product_id', FILTER_VALIDATE_INT);  
+	
     if ($product_id == NULL || $product_id == FALSE) {
         $error = 'Missing or incorrect product id.';
         include('../../public/errors/error.php');
     } else {
-        $categories = get_categories();
+        $teams = get_teams();
         $product = get_product($product_id);
 
         // Get product data

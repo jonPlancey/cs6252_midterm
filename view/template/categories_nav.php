@@ -1,9 +1,9 @@
 <nav>
 	<ul>
-	<?php foreach ($categories as $category) : ?>
+	<?php foreach ($teams as $team) : ?>
 		<li>
-		<a href="?category_id=<?php echo $category['categoryID']; ?>">
-			<?php echo $category['categoryName']; ?>
+		<a href="?category_id=<?php echo $team['team_id']; ?>">
+			<?php echo $team['team_name']; ?>
 		</a>
 		</li>
 	<?php endforeach; ?>

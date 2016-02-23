@@ -1,27 +1,27 @@
 <?php
-	function get_categories() {
+	function get_teams() {
 	    global $db;
-	    $query = 'SELECT * FROM categories
-	              ORDER BY categoryID';
+	    $query = 'SELECT * FROM team
+	              ORDER BY team_id';
 	    $statement = $db->prepare($query);
 	    $statement->execute();
 	    return $statement;    
 	}
 	
-	function get_category_name($category_id) {
+	function get_team_name($group_id) {
 	    global $db;
-	    $query = 'SELECT * FROM categories
-	              WHERE categoryID = :category_id';    
+	    $query = 'SELECT * FROM team
+	              WHERE team_id = :group_id';    
 	    $statement = $db->prepare($query);
-	    $statement->bindValue(':category_id', $category_id);
+	    $statement->bindValue(':group_id', $group_id);
 	    $statement->execute();    
-	    $category = $statement->fetch();
+	    $team = $statement->fetch();
 	    $statement->closeCursor();    
-	    $category_name = $category['categoryName'];
-	    return $category_name;
+	    $team_name = $team['team_name'];
+	    return $team_name;
 	}
 	
-	function add_category($category) {
+	function add_category($team) {
 		global $db;
 		$query = 'INSERT
 				  INTO
@@ -29,7 +29,7 @@
 				  VALUES (:category_name)';
 		
 		$statement = $db->prepare($query);
-		$statement->bindValue(':category_name', $category);
+		$statement->bindValue(':team_name', $team);
 		$statement->execute();
 		$statement->closeCursor();	
 

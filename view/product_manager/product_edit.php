@@ -14,7 +14,7 @@
 		function myFunction() {
 			var x = document.getElementById("id_dd_category").value;
 			document.getElementById("id_category").value = x;
-			//alert(     document.getElementById("id_category").innerHTML + '  '  +  <?php echo get_category_name("+ x +"); ?>  );
+			//alert(     document.getElementById("id_category").innerHTML + '  '  +  <?php echo get_team_name("+ x +"); ?>  );
 		}
 	</script>
 
@@ -40,7 +40,7 @@
         <br>
 		<!--load values into fields-->
         <label>&nbsp;</label>
-        <input type="text" name="category" value = "<?php echo get_category_name($category_id);?>"  id = "id_category" />
+        <input type="text" name="category" value = "<?php echo get_team_name($category_id);?>"  id = "id_category" />
         <br>
         
 
