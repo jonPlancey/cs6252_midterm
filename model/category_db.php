@@ -36,24 +36,23 @@
 	
 
 	
-	function add_category($team) {
+	function add_group($team) {	
 		global $db;
-		$query = 'INSERT
-				  INTO
-				 	categories (categoryName)
-				  VALUES (:category_name)';
+		$query = 'INSERT INTO team 
+					(team_name)
+				  VALUES (:group_name)';
 		
 		$statement = $db->prepare($query);
-		$statement->bindValue(':team_name', $team);
+		$statement->bindValue(':group_name', $team);
 		$statement->execute();
 		$statement->closeCursor();	
 
 	}
 		
-	function delete_category($team_id) {
+	function delete_group($team_id) {	
 		global $db;		
-		$query = 'DELETE FROM categories
-              WHERE categoryID = :team_id';
+		$query = 'DELETE FROM team
+              WHERE team_id = :team_id';
 		 
 		$statement = $db->prepare($query);
 		$statement->bindValue(':team_id', $team_id);

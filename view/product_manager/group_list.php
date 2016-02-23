@@ -15,8 +15,8 @@
 			  
 				<td>
 					<form action="index.php" method="post">
-				    	<input type="hidden" name="action" value="delete_categories"/>				
-						<input type="hidden" name="team_id"  value="<?php echo $category['categoryID']; ?>">						 	
+				    	<input type="hidden" name="action" 		value="delete_groups"/>				
+						<input type="hidden" name="team_id"  	value="<?php echo $team['team_id']; ?>">						 	
 						<input type="submit" value="Delete">
 					</form>
 				</td>
@@ -29,19 +29,23 @@
 	
 	    <h2>Add Group</h2>
 	    
-	    <!-- Newly added form code -->   
+
+		
 	    <form action="index.php" method="post"> 
-	     	<input type="hidden" name="action" value="add_categories" />
+	     	<input type="hidden" name="action" value="add_groups" />
+			
 		    <label>Name:</label>
-		    <input type="text" name="category_name">
+		    <input type="text" name="group_name">
 		
 		    <label>&nbsp;</label>
-		    <input type="submit" value="Add"><br>          
+		    <input type="submit" value="Add">
+			<br>          
 	    </form>
-	    <!-- Newly added form code -->  
+
+		
 	    
 	    <br>
-	    <p><a href="index.php?action=list_products">List Products</a></p>
+	    <p><a href="index.php?action=list_products">List Members</a></p>
 
     </main>
     

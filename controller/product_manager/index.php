@@ -48,7 +48,7 @@
 		
 		
 	    $teams = get_teams();
-	    include('../../view/product_manager/product_add.php');    
+	    include('../../view/product_manager/member_add.php');    
 	    
 	    
 	} else if ($action == 'add_product') {
@@ -72,11 +72,11 @@
 	} else if ($action == 'list_groups') {
     	list_groups();
 		
-	} else if ($action == 'add_categories') {		
-		add_categories();		
+	} else if ($action == 'add_groups') {		
+		add_groups();		
 		
-	} else if ($action == 'delete_categories') {		
-		delete_categories();
+	} else if ($action == 'delete_groups') {		
+		delete_groups();
 		
 	} else if ($action == 'edit_product') {
 		edit_products();	
@@ -92,21 +92,20 @@
 		include('../../view/product_manager/group_list.php');
 	}
 
-	function add_categories(){
-		$category = filter_input(INPUT_POST, 'category_name');
-		
-		if ($category == NULL) {
-			$error = "Invalid category name. Check name and try again.";							
+	function add_groups(){
+		$group_name = filter_input(INPUT_POST, 'group_name');		
+		if ($group_name == NULL) {
+			$error = "Invalid group name. Check name and try again.";							
 			include('../../public/errors/error.php');
 		} else {							
-			add_category($category);
+			add_group($group_name);
 			header('Location: .?action=list_groups');		
 		}
 	}
 	
-	function delete_categories(){
+	function delete_groups(){
 		$team_id = filter_input(INPUT_POST, 'team_id', FILTER_VALIDATE_INT);
-		delete_category($team_id);
+		delete_group($team_id);
 		header('Location: .?action=list_groups');
 	}
 
@@ -115,8 +114,7 @@
 	
 	
 	/*navigates to edit team page*/
-	function show_edit_form(){
-		
+	function show_edit_form(){		
 		$teams = get_teams();
 		$product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
 		include('../../view/product_manager/product_edit.php');
