@@ -14,6 +14,8 @@
     <section>
 		
         <h1><?php echo $team_name; ?></h1>
+		
+		
         <ul class="nav">
 
             <!-- display links for members in selected Teams\groups -->
@@ -27,12 +29,14 @@
             <?php endforeach; ?>
         </ul>
 		
+		
 		<div id="right_column">
-		<b>Description:</b> 
-            <p>
-               <?php echo $description; ?>
-            </p>
-        </div>
+			<b>Description:</b> 
+            <br>
+			
+            <?php echo $description; ?>
+
+        </div>	
 		
 		
 		

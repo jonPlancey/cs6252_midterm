@@ -18,12 +18,21 @@ if ($action == 'list_products') {
     if ($team_id == NULL || $team_id == FALSE) {
         $team_id = 1;
     }
-    $teams = get_teams();
-    $team_name = get_team_name($team_id);
-    $member = get_member_by_team($team_id);
+    $teams 		= get_teams();
+    $member		= get_member_by_team($team_id);	
+    $team_name	= get_team_name($team_id);
+
 	
-	/*
 	$description = get_team_description($team_id);
+	
+	
+	echo $team_name;
+	
+	
+
+	//$team['team_name'];
+	/*
+	
 	//$info = $description['team_description'];
 	
 	echo var_dump(  $member['member_name']  )

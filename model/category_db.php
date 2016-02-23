@@ -8,18 +8,33 @@
 	    return $statement;    
 	}
 	
-	function get_team_name($group_id) {
+	function get_team_name($team_id) {
 	    global $db;
 	    $query = 'SELECT * FROM team
-	              WHERE team_id = :group_id';    
+	              WHERE team_id = :team_id';    
 	    $statement = $db->prepare($query);
-	    $statement->bindValue(':group_id', $group_id);
+	    $statement->bindValue(':team_id', $team_id);
 	    $statement->execute();    
 	    $team = $statement->fetch();
 	    $statement->closeCursor();    
 	    $team_name = $team['team_name'];
 	    return $team_name;
 	}
+
+	function get_team_description($team_id) {
+	    global $db;
+	    $query = 'SELECT * FROM team
+	              WHERE team_id = :team_id';    
+	    $statement = $db->prepare($query);
+	    $statement->bindValue(':team_id', $team_id);
+	    $statement->execute();    
+	    $info = $statement->fetch();
+	    $statement->closeCursor();    
+	    $description = $info['team_description'];
+	    return $description;
+	}
+	
+
 	
 	function add_category($team) {
 		global $db;
