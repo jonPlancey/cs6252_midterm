@@ -1,7 +1,7 @@
 <?php
-    $dsn = 'mysql:host=localhost;dbname=my_guitar_shop1';
-    $username = 'mgs_user';
-    $password = 'pa55word';
+    $dsn = 'mysql:host=localhost;dbname=jim_team_member';
+    $username = 'jim_member';
+    $password = 'midterm2015';
 
     try {
         $db = new PDO($dsn, $username, $password);
@@ -10,11 +10,4 @@
         include('../errors/database_error.php');
         exit();
     }
-?>
-<?php // DATABASE CONNECTION CALL
-$connection = mysqli_connect ( 'localhost', 'mgs_user', 'pa55word', 'my_guitar_shop1' );
-if (! $connection) {
-	die ( '<div class="alert alert-danger" role="alert">
-		<b>The database did not connect: ' . mysqli_error ($connection) ) . '</b></div>';
-}
 ?>
