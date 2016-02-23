@@ -25,6 +25,7 @@ function get_product($product_id) {
 }
 
 function delete_product($product_id) {
+
     global $db;
     $query = 'DELETE FROM products
               WHERE productID = :product_id';
@@ -50,12 +51,7 @@ function add_product($category_id, $code, $name, $price) {
 }
 
 /* DEBUG */
-function edit_product($product_id, $category_id, $code, $name, $price) {
-	
-	//echo '<script type="text/javascript">alert("DEBUG: edit_product");</script>';			
-	
-	echo '<script type="text/javascript">alert("edit_product [ ' .$product_id. ' ' .$category_id.'  '.$code.'  '.$name.'  '.$price.  ' ]");</script>';
-
+function update_member($product_id, $category_id, $code, $name, $price) {
 	global $db;
 	$query = '	UPDATE
 					products 
@@ -68,11 +64,11 @@ function edit_product($product_id, $category_id, $code, $name, $price) {
 					productID = :product_id';
 					
 	$statement = $db->prepare($query);
-	$statement->bindValue(':product_id', $product_id);	
-	$statement->bindValue(':category_id', $category_id);
-	$statement->bindValue(':code', $code);
-	$statement->bindValue(':name', $name);
-	$statement->bindValue(':price', $price);
+	$statement->bindValue(':product_id',	$product_id);	
+	$statement->bindValue(':category_id',	$category_id);
+	$statement->bindValue(':code', 			$code);
+	$statement->bindValue(':name', 			$name);
+	$statement->bindValue(':price',			$price);
 	$statement->execute();
 	$statement->closeCursor();
 }

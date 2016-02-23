@@ -32,13 +32,12 @@
 	    
 	} else if ($action == 'delete_product') {
 		
-		
-	    $product_id = filter_input(INPUT_POST, 'product_id', 
-	            FILTER_VALIDATE_INT);
-	    $category_id = filter_input(INPUT_POST, 'category_id', 
-	            FILTER_VALIDATE_INT);
+
+	    $product_id = filter_input(INPUT_POST, 'product_id',  FILTER_VALIDATE_INT);
+	    $category_id = filter_input(INPUT_POST, 'category_id',FILTER_VALIDATE_INT);
+
 	    if ($category_id == NULL || $category_id == FALSE ||
-	            $product_id == NULL || $product_id == FALSE) {
+	        $product_id == NULL || $product_id == FALSE) {
 	        $error = "Missing or incorrect product id or category id.";
 	        include('../../public/error.php');
 	    } else { 
@@ -83,8 +82,8 @@
 	} else if ($action == 'edit_product') {
 		edit_products();	
 		
-	} else if ($action == 'update_product') {
-		update_products();
+	} else if ($action == 'show_edit_form') {
+		show_edit_form();
 
 	}	
 	
@@ -112,39 +111,51 @@
 		header('Location: .?action=list_categories');
 	}
 
-	/*goes to edit page*/
-	function update_products(){
+	
+	
+	
+	
+	/*navigates to edit team page*/
+	function show_edit_form(){
 		$categories = get_categories();
+		$product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);	
 		include('../../view/product_manager/product_edit.php');
 	}
 	
+
+	
+	
+	
+	
+	
+	
+	
 	/*at edit page goes back to main product list, after updating team*/
-	function edit_products(){
-		
-					
+	function edit_products(){		
 		$product_id		= filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
 	    $category_id 	= filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 	    $code 			= filter_input(INPUT_POST, 'code');
 	    $name			= filter_input(INPUT_POST, 'name');
 	    $price 			= filter_input(INPUT_POST, 'price');
-		
-	    edit_product($product_id, $category_id, $code, $name, $price);
-		
-		//echo '<script type="text/javascript">alert("edit_products [ ' .$category_id.'  '.$code.'  '.$name.'  '.$price.  ' ]");</script>';
-		
-		//header("Location: .?category_id=$category_id");
-		
-		
-		/*  
+	
+		eco 'ABC';
+		echo '<script type="text/javascript">alert("edit_products [ ' .$category_id.'  '.$code.'  '.$name.'  '.$price.  ' ]");</script>';		
+
 	    if ($category_id == NULL || $category_id == FALSE || $code == NULL || 
 	            $name == NULL || $price == NULL || $price == FALSE) {
 	        $error = "Invalid product data. Check all fields and try again.";
 	        include('../../public/errors/error.php');
 	    } else { 
-	        edit_product($category_id, $code, $name, $price);
+			//$categories = get_categories();
+			
+	        update_member($product_id, $category_id, $code, $name, $price);		
+			
+			//$product = get_product($product_id);
+			
 	        header("Location: .?category_id=$category_id");
 	    }
-		*/
+		
+
 	}
 
 

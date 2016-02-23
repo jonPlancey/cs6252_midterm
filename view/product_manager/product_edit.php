@@ -16,20 +16,19 @@
 	        
         </select>
         
-        
-        
-        <br>
 
+        <br>
+		<!--load values into fields-->
         <label>Code:</label>
-        <input type="text" name="code" value = "" />
+        <input type="text" name="code"	value = "<?php echo $product['productName'];?>" />
         <br>
 
         <label>Name:</label>
-        <input type="text" name="name"  value ="" />
+        <input type="text" name="name"  value = "<?php echo $category['categoryID'];?>" />
         <br>
 
         <label>List Price:</label>
-        <input type="text" name="price"  value = "" />
+        <input type="text" name="price"	value = "<?php echo $category['categoryName'];?>" />
         <br>
 
         <label>&nbsp;</label>
