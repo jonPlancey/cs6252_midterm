@@ -2,7 +2,7 @@
 
 <?php
 	$team_id = filter_input(INPUT_POST, 'team_id');
-	$product = get_product($product_id);
+	$product = get_member($product_id);
 ?>
 
 

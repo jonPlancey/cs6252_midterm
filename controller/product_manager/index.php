@@ -19,8 +19,8 @@
 	if ($action == 'list_products') {
 		
 		
-	    $team_id = filter_input(INPUT_GET, 'team_id', 
-	            FILTER_VALIDATE_INT);
+	    $team_id = filter_input(INPUT_GET, 'team_id', FILTER_VALIDATE_INT);
+		
 	    if ($team_id == NULL || $team_id == FALSE) {
 	        $team_id = 1;
 	    }

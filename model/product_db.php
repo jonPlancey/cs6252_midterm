@@ -12,16 +12,16 @@ function get_member_by_team($team_id) {
     return $members;
 }
 
-function get_product($product_id) {
+function get_member($member_id) {
     global $db;
     $query = 'SELECT * FROM products
-              WHERE productID = :product_id';
+              WHERE member_id = :member_id';
     $statement = $db->prepare($query);
-    $statement->bindValue(":product_id", $product_id);
+    $statement->bindValue(":member_id", $member_id);
     $statement->execute();
-    $product = $statement->fetch();
+    $members = $statement->fetch();
     $statement->closeCursor();
-    return $product;
+    return $members;
 }
 
 function delete_product($product_id) {

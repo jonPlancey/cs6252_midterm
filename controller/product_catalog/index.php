@@ -33,8 +33,12 @@ if ($action == 'list_products') {
         include('../../public/errors/error.php');
     } else {
         $teams = get_teams();
-        $product = get_product($product_id);
+        $product = get_member($product_id);
 
+		//echo var_dump($teams);
+		echo var_dump($product);
+		
+		
         // Get product data
         $code = $product['productCode'];
         $name = $product['productName'];
