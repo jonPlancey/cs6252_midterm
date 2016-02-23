@@ -15,7 +15,7 @@
             <!-- display links for members in selected Teams\groups -->
             <?php foreach ($member as $person) : ?>
             <li>
-                <a href = "?action=view_product&amp;product_id=<?php 
+                <a href = "?action=view_member&amp;member_id=<?php 
 						  echo $person['member_id']; ?>" >					  
                     <?php echo $person['member_name']; ?>
                 </a>

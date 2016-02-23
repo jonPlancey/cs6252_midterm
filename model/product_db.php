@@ -14,7 +14,7 @@ function get_member_by_team($team_id) {
 
 function get_member($member_id) {
     global $db;
-    $query = 'SELECT * FROM products
+    $query = 'SELECT * FROM member
               WHERE member_id = :member_id';
     $statement = $db->prepare($query);
     $statement->bindValue(":member_id", $member_id);

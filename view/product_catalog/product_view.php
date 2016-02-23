@@ -21,7 +21,7 @@
 
         <div id="right_column">
             <p>
-				<b>Birthday:</b> $<?php echo $list_price; ?>
+				<b>Birthday:</b> <?php echo $birth_day; ?>
 			</p>
         </div>
 		

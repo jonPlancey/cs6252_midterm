@@ -24,39 +24,26 @@ if ($action == 'list_products') {
     include('../../view/product_catalog/product_list.php');
 	
 	
-} else if ($action == 'view_product') {
+} else if ($action == 'view_member') {
 	
-    $product_id = filter_input(INPUT_GET, 'product_id', FILTER_VALIDATE_INT);  
+    $member_id = filter_input(INPUT_GET, 'member_id', FILTER_VALIDATE_INT);  
 	
-    if ($product_id == NULL || $product_id == FALSE) {
+    if ($member_id == NULL || $member_id == FALSE) {
         $error = 'Missing or incorrect product id.';
         include('../../public/errors/error.php');
     } else {
         $teams = get_teams();
-        $product = get_member($product_id);
-
-		//echo var_dump($teams);
-		echo var_dump($product);
+        $member = get_member($member_id);
 		
-		
-        // Get product data
-        $code = $product['productCode'];
-        $name = $product['productName'];
-        $list_price = $product['listPrice'];
-
-        // Calculate discounts
-        $discount_percent = 30;  // 30% off for all web orders
-        $discount_amount = round($list_price * ($discount_percent/100.0), 2);
-        $unit_price = $list_price - $discount_amount;
-
-        // Format the calculations
-        $discount_amount_f = number_format($discount_amount, 2);
-        $unit_price_f = number_format($unit_price, 2);
+        // Get member data
+		$code = $member['member_name'];
+		$name = $member['member_name'];
+        $birth_day = $member['member_birthday'];
 
         // Get image URL and alternate text
-        $image_filename = '../../public/images/' . $code . '.png';
-        $image_alt = 'Image: ' . $code . '.png';
-
+        $image_filename = '../../public/images/' . $code . '.jpg';
+        $image_alt = 'Image: ' . $code . '.jpg';
+		
         include('../../view/product_catalog/product_view.php');
     }
 }
