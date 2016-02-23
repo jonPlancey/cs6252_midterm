@@ -45,13 +45,13 @@
                 <td>
 					<form action="." method="post">
 						<input type="hidden" name="action"
-							   value="delete_product">
+							   value="delete_member">
 							   
-						<input type="hidden" name="product_id"
-							   value="<?php echo $product['productID']; ?>">
+						<input type="hidden" name="member_id"
+							   value="<?php echo $person['member_id']; ?>">
 							   
 						<input type="hidden" name="team_id"
-							   value="<?php echo $product['categoryID']; ?>">
+							   value="<?php echo $person['team_id']; ?>">
 							   
 						<input type="submit" value="Delete">         
 					</form>

@@ -29,18 +29,18 @@
 	    include('../../view/product_manager/product_list.php');
 	    
 	    
-	} else if ($action == 'delete_product') {
+	} else if ($action == 'delete_member') {
 		
 
-	    $product_id = filter_input(INPUT_POST, 'product_id',  FILTER_VALIDATE_INT);
+	    $member_id = filter_input(INPUT_POST, 'member_id',  FILTER_VALIDATE_INT);
 	    $team_id = filter_input(INPUT_POST, 'team_id',FILTER_VALIDATE_INT);
 
 	    if ($team_id == NULL || $team_id == FALSE ||
-	        $product_id == NULL || $product_id == FALSE) {
+	        $member_id == NULL || $member_id == FALSE) {
 	        $error = "Missing or incorrect product id or category id.";
 	        include('../../public/error.php');
 	    } else { 
-	        delete_product($product_id);
+	        delete_member($member_id);
 	        header("Location: .?team_id=$team_id");
 	    }
 	    
@@ -53,19 +53,16 @@
 	    
 	} else if ($action == 'add_product') {
 		
-		
-	    $team_id = filter_input(INPUT_POST, 'team_id', 
-	            FILTER_VALIDATE_INT);
-	    $code = filter_input(INPUT_POST, 'code');
-	    $name = filter_input(INPUT_POST, 'name');
-	    $price = filter_input(INPUT_POST, 'price');
-	    
-	    if ($team_id == NULL || $team_id == FALSE || $code == NULL || 
-	            $name == NULL || $price == NULL || $price == FALSE) {
+	    $team_id = filter_input(INPUT_POST, 'team_id', FILTER_VALIDATE_INT);
+	    $firstname = filter_input(INPUT_POST, 'firstname');
+	    $birthday = filter_input(INPUT_POST, 'birthday');
+	  		
+	    if ($team_id == NULL || $team_id == FALSE || $firstname == NULL || 
+	        $birthday == NULL || $birthday == FALSE) {
 	        $error = "Invalid product data. Check all fields and try again.";
 	        include('../../public/errors/error.php');
 	    } else { 
-	        add_product($team_id, $code, $name, $price);
+	        add_member($team_id, $firstname, $birthday);
 	        header("Location: .?team_id=$team_id");
 	    }
     

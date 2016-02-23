@@ -24,28 +24,26 @@ function get_member($member_id) {
     return $members;
 }
 
-function delete_product($product_id) {
-
+function delete_member($member_id) {
     global $db;
-    $query = 'DELETE FROM products
-              WHERE productID = :product_id';
+    $query = 'DELETE FROM member
+              WHERE member_id = :member_id';
     $statement = $db->prepare($query);
-    $statement->bindValue(':product_id', $product_id);
+    $statement->bindValue(':member_id', $member_id);
     $statement->execute();
     $statement->closeCursor();
 }
 
-function add_product($team_id, $code, $name, $price) {
+function add_member($team_id, $firstname, $birthday) {
     global $db;
-    $query = 'INSERT INTO products
-                 (categoryID, productCode, productName, listPrice)
+    $query = 'INSERT INTO member
+                 (team_id, member_name, member_birthday)
               VALUES
-                 (:team_id, :code, :name, :price)';
+                 (:team_id, :firstname, :birthday)';
     $statement = $db->prepare($query);
-    $statement->bindValue(':team_id', $team_id);
-    $statement->bindValue(':code', $code);
-    $statement->bindValue(':name', $name);
-    $statement->bindValue(':price', $price);
+    $statement->bindValue(':team_id', 	$team_id);
+    $statement->bindValue(':firstname', $firstname);
+    $statement->bindValue(':birthday', 	$birthday);
     $statement->execute();
     $statement->closeCursor();
 }

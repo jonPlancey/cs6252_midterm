@@ -18,17 +18,14 @@
 		
         <br>
 
-        <label>Code:</label>
-        <input type="text" name="code" />
+        <label>First Name:</label>
+        <input type="text" name="firstname" />
         <br>
 
-        <label>Name:</label>
-        <input type="text" name="name" />
+        <label>Birthday: yyyy-dd-mm</label>
+        <input type="text" name="birthday" />
         <br>
 
-        <label>List Price:</label>
-        <input type="text" name="price" />
-        <br>
 
         <label>&nbsp;</label>
         <input type="submit" value="Add Member" />
