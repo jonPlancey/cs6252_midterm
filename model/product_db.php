@@ -1,11 +1,11 @@
 <?php
-function get_products_by_category($category_id) {
+function get_member_by_team($team_id) {
     global $db;
-    $query = 'SELECT * FROM products
-              WHERE products.categoryID = :category_id
-              ORDER BY productID';
+    $query = 'SELECT * FROM team
+              WHERE products.categoryID = :team_id
+              ORDER BY member_id';
     $statement = $db->prepare($query);
-    $statement->bindValue(":category_id", $category_id);
+    $statement->bindValue(":team_id", $team_id);
     $statement->execute();
     $products = $statement->fetchAll();
     $statement->closeCursor();

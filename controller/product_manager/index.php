@@ -26,7 +26,7 @@
 	    }
 	    $team_name = get_team_name($category_id);
 	    $teams = get_teams();
-	    $products = get_products_by_category($category_id);
+	    $member = get_member_by_team($category_id);
 	    include('../../view/product_manager/product_list.php');
 	    
 	    
