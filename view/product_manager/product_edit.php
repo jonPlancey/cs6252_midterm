@@ -1,4 +1,7 @@
-<?php include '../../view/template/header.php'; ?>
+<?php include '../../view/template/header.php'; 
+		echo "from me $product_id";
+		$product = get_product($product_id); //define products so I can use it <--
+		?>
 <main>
     <h1>Edit Product</h1>
     <form action="../../controller/product_manager/index.php" method="post" id="add_product_form">
@@ -20,15 +23,15 @@
         <br>
 		<!--load values into fields-->
         <label>Code:</label>
-        <input type="text" name="code"	value = "<?php echo $product['productName'];?>" />
+        <input type="text" name="code"	value = "<?php echo $product['productCode'];?>" />
         <br>
 
         <label>Name:</label>
-        <input type="text" name="name"  value = "<?php echo $category['categoryID'];?>" />
+        <input type="text" name="name"  value = "<?php echo $product['productName'];?>" />
         <br>
 
         <label>List Price:</label>
-        <input type="text" name="price"	value = "<?php echo $category['categoryName'];?>" />
+        <input type="text" name="price"	value = "<?php echo $product['listPrice'];?>" />
         <br>
 
         <label>&nbsp;</label>
