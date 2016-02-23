@@ -89,7 +89,7 @@
 	
 	function list_groups(){
 		$teams = get_teams();
-		include('../../view/product_manager/category_list.php');
+		include('../../view/product_manager/group_list.php');
 	}
 
 	function add_categories(){

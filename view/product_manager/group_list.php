@@ -1,6 +1,6 @@
 <?php include '../../view/template/header.php'; ?>
 	<main>
-	    <h1>Category List</h1>
+	    <h1>Group List</h1>
 	    <table>
 	        <tr>
 	            <th>Name</th>
@@ -8,10 +8,10 @@
 	        </tr>
 	        
 	        <!-- Newly added table -->        
-			<?php foreach ($categories as $category) : ?>
+			<?php foreach ($teams as $team) : ?>
 	
 			<tr>                
-				<td><?php echo $category['categoryName']; ?></td>
+				<td><?php echo $team['team_name']; ?></td>
 			  
 				<td>
 					<form action="index.php" method="post">
@@ -27,7 +27,7 @@
 	    
 	    </table>
 	
-	    <h2>Add Category</h2>
+	    <h2>Add Group</h2>
 	    
 	    <!-- Newly added form code -->   
 	    <form action="index.php" method="post"> 
