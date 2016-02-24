@@ -112,16 +112,10 @@
 	
 	/*navigates to edit team page*/
 	function show_edit_form(){		
-		//$teams = get_teams();
-
 		$team_id = filter_input(INPUT_POST, 'team_id', FILTER_VALIDATE_INT);		
 		$member_id = filter_input(INPUT_POST, 'member_id', FILTER_VALIDATE_INT);
 		$member = get_member($member_id);
-	
-		echo '<script type="text/javascript">alert("' . $member_id . '"); </script>';
-		
-	
-		
+
 		include('../../view/product_manager/member_edit.php');
 	}
 	
@@ -129,24 +123,22 @@
 	
 	
 	
-	
-	
-	
-	
 	/*at edit page goes back to main product list, after updating team*/
 	function edit_products(){	
-		$product_id		= filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
+		$member_id	= filter_input(INPUT_POST, 'member_id', FILTER_VALIDATE_INT);
 	    $team_id 	= filter_input(INPUT_POST, 'team_id', FILTER_VALIDATE_INT);
-	    $code 			= filter_input(INPUT_POST, 'code');
-	    $name			= filter_input(INPUT_POST, 'name');
-	    $price 			= filter_input(INPUT_POST, 'price');
+	    $firstname	= filter_input(INPUT_POST, 'firstname');
+	    $birthday 	= filter_input(INPUT_POST, 'birthday');
 	
 		
-	    if ($team_id == NULL || $team_id == FALSE || $code == NULL || $name == NULL || $price == NULL || $price == FALSE) {
+	    if ($team_id == NULL || $team_id == FALSE || 
+			$firstname == NULL || 
+			$birthday == NULL || $birthday == FALSE) {
+				
 	        $error = "Invalid product data. Check all fields and try again.";
 	        include('../../public/errors/error.php');
 	    } else { 
-	        update_member($product_id, $team_id, $code, $name, $price);		
+	        update_member($team_id, $firstname, $birthday, $member_id);		
 			header("Location: .?team_id=$team_id");
 	    }
 		

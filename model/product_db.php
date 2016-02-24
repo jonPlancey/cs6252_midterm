@@ -51,26 +51,24 @@ function add_member($team_id, $firstname, $birthday) {
 }
 
 /* DEBUG */
-function update_member($product_id, $team_id, $code, $name, $price) {
+function update_member($team_id, $firstname, $birthday, $member_id) {
    	//echo '<script type="text/javascript">alert("edit_products [ ' .$product_id. '    ' .$team_id.'   '.$code.'   '.$name.'   '.$price.  ' ]");</script>';		
 	global $db;
 	
 	$query = 'UPDATE
-					products 
+					member 
 				SET 
-					categoryID	=	:team_id, 
-					productCode	=	:code, 			
-					productName	=	:name, 
-					listPrice	=	:price 
+					team_id			= :team_id, 			
+					member_name		= :firtname, 
+					member_birthday	= :birthday 
 				WHERE 
-					productID = :product_id';			 
+					member_id		= :member_id';			 
 					
 	$statement = $db->prepare($query);
-	$statement->bindValue(':product_id',	$product_id);	
-	$statement->bindValue(':team_id',	$team_id);
-	$statement->bindValue(':code', 			$code);
-	$statement->bindValue(':name', 			$name);
-	$statement->bindValue(':price',			$price);
+	$statement->bindValue(':team_id',	$team_id);	
+	$statement->bindValue(':firtname',	$firstname);
+	$statement->bindValue(':birthday', 	$birthday);
+	$statement->bindValue(':member_id', $member_id);	
 	$statement->execute();
 	$statement->closeCursor();
 	
