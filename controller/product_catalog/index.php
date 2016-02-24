@@ -7,11 +7,11 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
     if ($action == NULL) {
-        $action = 'list_products';
+        $action = 'list_members';
     }
 }  
 
-if ($action == 'list_products') {
+if ($action == 'list_members') {
 	
     $team_id = filter_input(INPUT_GET, 'team_id', FILTER_VALIDATE_INT);
 	
@@ -23,7 +23,7 @@ if ($action == 'list_products') {
     $team_name	= get_team_name($team_id);
 	$description = get_team_description($team_id);
 	
-    include('../../view/product_catalog/product_list.php');
+    include('../../view/product_catalog/member_list.php');
 	
 	
 } else if ($action == 'view_member') {

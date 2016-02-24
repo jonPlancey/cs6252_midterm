@@ -45,7 +45,7 @@
 		
 	    
 	    <br>
-	    <p><a href="index.php?action=list_products">List Members</a></p>
+	    <p><a href="index.php?action=list_members">List Members</a></p>
 
     </main>
     

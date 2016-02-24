@@ -11,11 +11,11 @@
 	if ($action == NULL) {
 	    $action = filter_input(INPUT_GET, 'action');
 	    if ($action == NULL) {
-	        $action = 'list_products';
+	        $action = 'list_members';
 	    }
 	}
 	
-	if ($action == 'list_products') {
+	if ($action == 'list_members') {
 		
 		
 	    $team_id = filter_input(INPUT_GET, 'team_id', FILTER_VALIDATE_INT);
@@ -26,7 +26,7 @@
 	    $team_name = get_team_name($team_id);
 	    $teams = get_teams();
 	    $member = get_member_by_team($team_id);
-	    include('../../view/product_manager/product_list.php');
+	    include('../../view/product_manager/member_list.php');
 	    
 	    
 	} else if ($action == 'delete_member') {
@@ -112,11 +112,17 @@
 	
 	/*navigates to edit team page*/
 	function show_edit_form(){		
-		$teams = get_teams();
-		$team_id = filter_input(INPUT_POST, 'team_id', FILTER_VALIDATE_INT);
-		$member = get_member($team_id);
+		//$teams = get_teams();
+
+		$team_id = filter_input(INPUT_POST, 'team_id', FILTER_VALIDATE_INT);		
+		$member_id = filter_input(INPUT_POST, 'member_id', FILTER_VALIDATE_INT);
+		$member = get_member($member_id);
+	
+		echo '<script type="text/javascript">alert("' . $member_id . '"); </script>';
 		
-		include('../../view/product_manager/product_edit.php');
+	
+		
+		include('../../view/product_manager/member_edit.php');
 	}
 	
 

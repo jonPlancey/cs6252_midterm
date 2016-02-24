@@ -32,7 +32,7 @@
         <br>
     </form>
     <p class="last_paragraph">
-        <a href="index.php?action=list_products">View Member List</a>
+        <a href="index.php?action=list_members">View Member List</a>
     </p>
 
 </main>
