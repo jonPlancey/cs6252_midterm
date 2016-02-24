@@ -48,7 +48,6 @@
 		$statement->closeCursor();	
 
 	}
-	//DELETE FROM `jim_team_member`.`team` WHERE `team_id`='10';
 	
 	function delete_group($team_id) {	
 		global $db;	
@@ -63,20 +62,6 @@
 
 	}
 	
-	function edit_category($team_id) {
-		global $db;
-		$query = 'UPDATE FROM categories
-              WHERE categoryID = :team_id';
-			
-		$statement = $db->prepare($query);
-		$statement->bindValue(':team_id', $team_id);
-		$success = $statement->execute();
-		$statement->closeCursor();
-	
-	}	
-	
-
-
 
 
 
