@@ -32,8 +32,8 @@
 	} else if ($action == 'delete_member') {
 		
 
-	    $member_id = filter_input(INPUT_POST, 'member_id',  FILTER_VALIDATE_INT);
-	    $team_id = filter_input(INPUT_POST, 'team_id',FILTER_VALIDATE_INT);
+	    $member_id 	= filter_input(INPUT_POST, 'member_id',  FILTER_VALIDATE_INT);
+	    $team_id 	= filter_input(INPUT_POST, 'team_id',	FILTER_VALIDATE_INT);
 
 	    if ($team_id == NULL || $team_id == FALSE ||
 	        $member_id == NULL || $member_id == FALSE) {

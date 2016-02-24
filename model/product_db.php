@@ -27,7 +27,9 @@ function get_member($member_id) {
 function delete_member($member_id) {
     global $db;
     $query = 'DELETE FROM member
-              WHERE member_id = :member_id';
+              WHERE 
+					member_id = :member_id';
+					
     $statement = $db->prepare($query);
     $statement->bindValue(':member_id', $member_id);
     $statement->execute();
