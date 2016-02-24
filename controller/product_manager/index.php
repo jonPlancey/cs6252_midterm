@@ -113,7 +113,9 @@
 	/*navigates to edit team page*/
 	function show_edit_form(){		
 		$teams = get_teams();
-		$product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
+		$team_id = filter_input(INPUT_POST, 'team_id', FILTER_VALIDATE_INT);
+		$member = get_member($team_id);
+		
 		include('../../view/product_manager/product_edit.php');
 	}
 	

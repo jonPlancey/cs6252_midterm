@@ -63,10 +63,10 @@
 							   value="show_edit_form">
 							   
 						<input type="hidden" name="product_id"
-							   value="<?php echo $product['productID']; ?>">
+							    value="<?php echo $person['member_id']; ?>">
 							   
 						<input type="hidden" name="team_id"
-							   value="<?php echo $product['categoryID']; ?>">                           
+							   value="<?php echo $person['team_id']; ?>">                         
 							   
 						<input type="submit" value="Edit">
 					</form>
